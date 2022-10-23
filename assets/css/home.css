@@ -1,0 +1,63 @@
+#home #header {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#home #header #new_habit {
+  width: 25%;
+}
+
+#home #header #new_habit form input[type="text"] {
+  width: 75%;
+  height: 25px;
+  font-size: 16px;
+}
+
+#home #header #new_habit form input[type="text"]:focus {
+  outline: none !important;
+}
+
+#home #header #new_habit form button {
+  width: 75px;
+  height: 30px;
+  margin-left: 10px;
+  border-radius: 5%;
+  border: none;
+  background-color: #91ab4b;
+}
+
+#home .render_habits {
+  width: 100%;
+}
+
+#home .render_habits .habit_list {
+  width: 40%;
+  margin: 50px auto 10px;
+  list-style: none;
+  background-color: bisque;
+  padding: 10px;
+}
+
+#home .render_habits .habit_list .habit_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
+#home .render_habits .habit_list .habit_item .habit_item_name {
+  font-size: 25px;
+}
+
+#home .render_habits .habit_list .habit_item .habit_delete {
+  font-size: 25px;
+}
+
+#home .render_habits .habit_list .habit_item .habit_delete a {
+  color: red;
+}

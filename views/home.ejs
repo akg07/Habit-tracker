@@ -1,1 +1,36 @@
-<h1>Hello World</h1>
+<link rel="stylesheet" href="css/home.css">
+
+<div id="home">
+    <!-- header -->
+    <div id="header">
+        <h1>Habit Tracker</h1>
+
+        <!-- New habit -->
+        <div id="new_habit">
+            <form action="">
+                <input type="text" name="habit_name" placeholder="Enter New Habit" required>
+                <button class="button" type="submit"><i class="fas fa-plus"></i> Create</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- List of habits -->
+    <div class="render_habits">
+        <ul class="habit_list">
+            <li class="habit_item">
+                <div class="habit_item_name"><span>Habit Name</span></div>
+                <div class="habit_delete">
+                    <a href="#"><i class="fa-solid fa-trash"></i></a>
+                </div>
+            </li>
+
+            <li class="habit_item">
+                <div class="habit_item_name"><span>Habit Name</span></div>
+                <div class="habit_delete">
+                    <a href="#"><i class="fa-solid fa-trash"></i></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
