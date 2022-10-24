@@ -20,6 +20,8 @@ app.use(sassMiddleWare({
     prefix: '/css'
 }));
 
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
 // Static Files
 app.use(express.static(path.join(__dirname, './assets')));
 app.use(express.urlencoded());

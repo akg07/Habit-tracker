@@ -14,11 +14,15 @@ module.exports.home = function(req, res) {
             });
         }
 
-        return res.status(200).json({
-            message: 'Fetch success',
-            habits: habits
-        });
-    })
+        // return res.status(200).json({
+        //     message: 'Fetch success',
+        //     habits: habits
+        // });
+
+        return res.render('home', {
+            habit_list: habits
+        })
+    });
 }
 
 
@@ -27,6 +31,7 @@ creating new habit when clicking on +create button
 API: localhost:8000/habit/addNewHabit
 ******************************************************************************************************************* */
 module.exports.addNewHabit = function(req, res) {
+    req.body.record = {};
     console.log(req.body);
 
     Habit.create(req.body, function(err, newHabit) {
@@ -37,9 +42,11 @@ module.exports.addNewHabit = function(req, res) {
             });
         }
 
-        return res.status(200).json({
-            habit: newHabit
-        });
+        // return res.status(200).json({
+        //     habit: newHabit
+        // });
+
+        return res.redirect("back");
     });
 }
 
@@ -60,9 +67,11 @@ module.exports.deleteHabit = function(req, res) {
             });
         }
 
-        return res.status(200).json({
-            message: 'Deleted Successfully'
-        });
+        // return res.status(200).json({
+        //     message: 'Deleted Successfully'
+        // });
+
+        return res.redirect("back");
     });
 
 
@@ -83,11 +92,14 @@ module.exports.viewHabit = function (req, res) {
             });
         }
         else {
-            res.status(200).json({
-                message: 'success',
-                habit: habit
-            })
-            // res.render("habit.ejs", { "habit": habit });
+            // res.status(200).json({
+            //     message: 'success',
+            //     habit: habit
+            // })
+
+            console.log(habit);
+
+            res.render("habit", { "habit": habit });
         }
     })
 }
@@ -107,6 +119,7 @@ module.exports.fetchHabit = function (req, res) {
             });
         }
         else {
+            console.log(habit);
             res.setHeader('Content-Type', 'application/json');
             res.end(JSON.stringify(habit));
         }
@@ -119,3 +132,39 @@ Update habit with date and status of the present day
 MAP => date(key) - status(value)
 API: localhost:8000/habit/updateHabit
 ******************************************************************************************************************* */
+module.exports.updateDbDate = function(req, res) {
+    let id = req.query.id;
+    let date = req.query.date;
+    let value = req.query.value;
+
+    console.log(id, date, value);
+
+    Habit.findById(id, function(err, habit) {
+        if(err) {
+            console.log('error at finding habit ', err);
+            return res.end('{"status": "failed}');
+        }
+
+        const record = habit.record;
+        if(date in record) {
+
+            //update value
+            record[date] = value;
+        }else {
+
+            // add new 
+            record.set(date, value);
+        }
+
+        console.log(record);
+
+        Habit.updateOne({"_id": id}, {$set: {record: record}}, function(err) {
+            if(err) {
+                console.log("error in updating habit: ", err);
+                return res.end('{"status" : "failed"}');
+            }
+
+            return res.end('{"status" : "success"}');
+        });
+    });
+}
