@@ -22,8 +22,10 @@
 
 #home #header #new_habit form input[type="text"] {
   width: 75%;
-  height: 25px;
+  height: 30px;
   font-size: 16px;
+  border-radius: 5px;
+  border: none;
 }
 
 #home #header #new_habit form input[type="text"]:focus {
@@ -37,6 +39,7 @@
   border-radius: 5%;
   border: none;
   background-color: #91ab4b;
+  cursor: pointer;
 }
 
 #home #list_name {
@@ -56,6 +59,7 @@
   list-style: none;
   padding: 10px;
   overflow: scroll;
+  overflow-x: hidden;
   border: 1px solid purple;
   border-radius: 5px;
 }

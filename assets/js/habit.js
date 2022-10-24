@@ -97,6 +97,7 @@
                 listEle.style.backgroundColor = 'lightgray'
             }
 
+            // when click on list item change color and status of the habit for perticular date
             listEle.onclick = function() {
                 let value = 0;
                 if (listEle.style.backgroundColor == "lightgray") {
@@ -145,6 +146,7 @@
         renderDaysList(days, record, endDate);
     }
 
+    
     searchBtn.onclick = function() {
         let currentStartDate = moment(startDate.value);
         let currentEndDate = moment(endDate.value);

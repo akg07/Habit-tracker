@@ -1,3 +1,5 @@
+// create a connection between server and DB
+
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/habitTracker');

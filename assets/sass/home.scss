@@ -7,6 +7,7 @@
         align-items: center;
         justify-content: space-between;
 
+        // Project name 
         #title{
             display: flex;
             flex-direction: row;
@@ -17,14 +18,17 @@
             }
         }
 
+        // create a new habit
         #new_habit{
             width: 25%;
             
             form{
                 input[type="text"]{
                     width: 75%;
-                    height: 25px;
+                    height: 30px;
                     font-size: 16px;
+                    border-radius: 5px;
+                    border: none;
                 }
 
                 input[type="text"]:focus {
@@ -38,17 +42,20 @@
                     border-radius: 5%;
                     border: none;
                     background-color: rgb(145, 171, 75);
+                    cursor: pointer;
                 }
             }
         }
     }
 
+    // Identifier
     #list_name{
         border-top: 1px solid red;
         border-bottom: 1px solid red;
         text-align: center;
     }
 
+    // List of all habits
     .render_habits{
         width: 100%;
         .habit_list{
@@ -58,10 +65,11 @@
             list-style: none;
             padding: 10px;
             overflow: scroll;
+            overflow-x: hidden;
             border: 1px solid purple;
             border-radius: 5px;
 
-            
+            // habit item
             .habit_item {
                 display: flex;
                 flex-direction: row;
@@ -86,6 +94,7 @@
                 }
             }
 
+            // when hover over perticular habit change bg with transition
             .habit_item:hover{
                 background: #7DC2AD;
             }

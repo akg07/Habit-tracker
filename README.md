@@ -38,13 +38,12 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
     <a href="#Sample-images-from-postman">Sample Images</a>
     </li>
+    <li><a href="#project-structure">Project Structure</a></li>
+    <li><a href="#built-with">Built With</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -52,9 +51,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li>
-        <a href="#configure">Configure</a>
-    </li>
+    <li><a href="#configure">Configure</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -71,7 +68,7 @@ By default it delivers 7 days details.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Sample Images from POSTMAN
+### Sample Images
 Here are some sample images of the CRUD Ops. Have a quick look
 
 #### Habit home

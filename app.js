@@ -6,7 +6,6 @@ const db = require('./configs/mongoose');
 
 const expressLayouts = require('express-ejs-layouts');
 
-
 const sassMiddleWare = require('node-sass-middleware');
 const path = require('path');
 
@@ -20,9 +19,9 @@ app.use(sassMiddleWare({
     prefix: '/css'
 }));
 
-app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Static Files
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, './assets')));
 app.use(express.urlencoded());
 app.use(express.json());
