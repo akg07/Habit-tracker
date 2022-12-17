@@ -1,8 +1,9 @@
 // create a connection between server and DB
-
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/habitTracker');
+const URI = process.env.MONGODB_URI || 'mongodb://localhost/habitTracker';
+
+mongoose.connect(URI);
 
 const db = mongoose.connection;
 
