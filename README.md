@@ -185,7 +185,6 @@ Project Link: [Habit Tracker](https://github.com/akg07/Habit-tracker)
 
 
 * [Open Source License](https://choosealicense.com)
-* [Coding Ninjas](https://www.codingninjas.com/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
